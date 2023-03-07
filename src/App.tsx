@@ -1,34 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import "./App.scss";
+import { Stats } from "./components/stats/Stats";
+import { statsInfo } from "./utils";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <main className="App">
+      <section className="main">
+        <section className="left">
+          <h1 className="left__header">Your Result</h1>
+          <div className="left__circle">
+            <h1 className="left__circle--header">79</h1>
+            <h3 className="left__circle--subtitle">of 100</h3>
+          </div>
+          <h3 className="left__subtitle">Great</h3>
+          <p className="left__description">
+            Your performance exceed 65% of the people conducting the test here!
+          </p>
+        </section>
+        <section className="right">
+          <h1 className="right__header">Summary</h1>
+          {statsInfo.map(({ label, id, img, className, amount }) => (
+            <Stats
+              amount={amount}
+              key={id}
+              label={label}
+              className={className}
+              img={img}
+            />
+          ))}
+          <button className="right__button">Continue</button>
+        </section>
+      </section>
+    </main>
+  );
 }
 
-export default App
+export default App;

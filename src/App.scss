@@ -1,0 +1,249 @@
+@import "./constants/index.scss";
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Hanken Grotesk";
+  font-style: normal;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+
+  background: white;
+
+  @include for-size("desktop-up") {
+    background: #ecf2ff;
+  }
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 284px 352px;
+
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include for-size("desktop-up") {
+      flex-direction: row;
+      background: white;
+      border-radius: 32px;
+    }
+
+    .left {
+      background: linear-gradient(
+        180deg,
+        #7755ff 0%,
+        #6943ff 0.01%,
+        #2f2ce9 100%
+      );
+      box-shadow: 0px 30px 60px rgba(61, 108, 236, 0.15);
+      border-radius: 0px 0px 32px 32px;
+      height: 356px;
+      width: 100%;
+      padding: 24px 40px 40px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 24px;
+      @include for-size("desktop-up") {
+        width: 368px;
+        border-radius: 32px;
+        height: 512px;
+        padding: 38px 54px 54px 54px;
+      }
+
+      &__header {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+        color: #cac9ff;
+      }
+      &__circle {
+        background: linear-gradient(
+          180deg,
+          #4d21c9 0%,
+          rgba(37, 33, 201, 0) 100%,
+          rgba(37, 33, 201, 0) 100%
+        );
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include for-size("desktop-up") {
+          height: 200px;
+          width: 200px;
+        }
+        &--header {
+          font-weight: 800;
+          font-size: 56px;
+          line-height: 72px;
+          text-align: center;
+          color: #ffffff;
+          @include for-size("desktop-up") {
+            font-size: 72px;
+            line-height: 72px;
+          }
+        }
+        &--subtitle {
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 21px;
+          color: #cac9ff;
+          mix-blend-mode: normal;
+          opacity: 0.52;
+          @include for-size("desktop-up") {
+            font-size: 18px;
+            line-height: 23px;
+          }
+        }
+      }
+      &__description {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        text-align: center;
+        color: #cac9ff;
+
+        @include for-size("desktop-up") {
+          font-size: 18px;
+          line-height: 23px;
+        }
+      }
+      &__subtitle {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31px;
+        text-align: center;
+        color: #ffffff;
+        @include for-size("desktop-up") {
+          font-size: 32px;
+          line-height: 42px;
+        }
+      }
+    }
+
+    .right {
+      padding: 24px 30px 30px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: column;
+      gap: 16px;
+      background: white;
+
+      @include for-size("desktop-up") {
+        height: 512px;
+        border-radius: 32px;
+        padding: 40px;
+      }
+
+      &__header {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 23px;
+        color: #303b59;
+        @include for-size("desktop-up") {
+          margin-bottom: 8px;
+          font-size: 24px;
+          line-height: 31px;
+        }
+      }
+      &__button {
+        background: #303b59;
+        border-radius: 128px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 23px;
+        color: #ffffff;
+        border: none;
+        padding: 17px;
+        width: 100%;
+        margin-top: 8px;
+        cursor: pointer;
+
+        &:hover {
+          background: linear-gradient(
+            180deg,
+            #7755ff 0%,
+            #6943ff 0.01%,
+            #2f2ce9 100%
+          );
+        }
+      }
+    }
+  }
+}

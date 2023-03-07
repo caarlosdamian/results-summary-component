@@ -1,0 +1,90 @@
+@import "../../constants/index.scss";
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 12px;
+  width: 100%;
+  min-width: 315px;
+
+  @include for-size("desktop-up") {
+    min-width: 272px;
+  }
+
+  &.red {
+    color: #ff5555;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 255, 255, 0.95)
+      ),
+      #ff5555;
+  }
+
+  &.yellow {
+    color: #ffb21e;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 255, 255, 0.95)
+      ),
+      #ffb21e;
+  }
+
+  &.green {
+    color: #00bb8f;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 255, 255, 0.95)
+      ),
+      #00bb8f;
+  }
+
+  &.blue {
+    color: #1125d6;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.95),
+        rgba(255, 255, 255, 0.95)
+      ),
+      #1125d6;
+  }
+  .stats__left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    .stats__left--header {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px;
+      @include for-size("desktop-up") {
+        font-size: 18px;
+        line-height: 23px;
+      }
+    }
+  }
+
+  .stats__right {
+    .stats__right--header {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 21px;
+      color: #303b59;
+      @include for-size("desktop-up") {
+        font-size: 18px;
+        line-height: 23px;
+      }
+
+      strong {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 21px;
+        color: #303b59;
+        opacity: 0.5;
+      }
+    }
+  }
+}
